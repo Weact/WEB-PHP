@@ -1,0 +1,109 @@
+body
+{
+	margin: 0;
+	padding: 0;
+}
+#hdr
+{
+	background-color: #0fb9b1;
+	margin: 0;
+	padding: 10px;
+}
+
+.hdr span:first-child
+{
+	display: inline-block;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: underline;
+	margin: 0 auto;
+
+}
+
+.hdr-span:nth-child(3)
+{
+	color: white;
+	font-size: 24px;
+	font-style: italic;
+	margin: 0 auto;
+}
+
+.table-client-container
+{
+	transition: all 1s ease-out;
+	background-color: black;
+	border: 5px white groove;
+	border-radius:50px;
+	width: 800px;
+}
+.btn-container
+{
+	display: flex;
+	justify-content: center;
+}
+.btn
+{
+	background: linear-gradient(#e66465, #9198e5);
+	color: black;
+	font-weight: bolder;
+	font-size: 18px;
+	padding: 5px;
+	border: 5px pink groove;
+	border-radius: 20px;
+	margin: 10px;
+	outline: none;
+}
+
+table[class="tab"] td, table[class="tab"] th
+{
+	transition: all 1s ease-out;
+	font-size: 20px;
+}
+
+table[class="tab"]
+{
+	border-radius: 10px;
+	margin: 0 auto;
+}
+
+table[class="tab"] caption
+{
+	background-color: darkred;
+	color: white;
+	font-size: 30px;
+	font-weight: bolder;
+	border-radius:5px;
+	width: 85%;
+	margin: 0 auto;
+}
+
+table[class="tab"] th:nth-child(odd)
+{
+	background-color: grey;
+	color: white;
+}
+table[class="tab"] th:nth-child(even)
+{
+	background-color: lightgrey;
+	color: black;
+}
+table[class="tab"] tr:nth-child(odd)
+{
+	background-color: cyan;
+	color: darkred;
+}
+table[class="tab"] tr:nth-child(even)
+{
+	background-color: darkgreen;
+	color: white;
+}
+
+table[class="tab"] th:hover, table[class="tab"] td:hover
+{
+	background-color: black;
+	color: gold;
+	font-weight: bolder;
+	border: 3px white solid;
+	border-radius: 10px;
+}

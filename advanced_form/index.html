@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire avancés</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<center>
+		<header>
+			<h1>Formulaire avancé avec utilisation de PHP et JavaScript</h1>
+			<h5>LUDUS ACADEMIE</h3>
+		<!--
+			<h2>Formulaire avancé avec utilisation de PHP et JavaScript</h2>
+			<h3>Formulaire avancé avec utilisation de PHP et JavaScript</h3>
+			<h4>Formulaire avancé avec utilisation de PHP et JavaScript</h4>
+			<h5>Formulaire avancé avec utilisation de PHP et JavaScript</h5>
+			<h6>Formulaire avancé avec utilisation de PHP et JavaScript</h6>
+		-->
+		</header>
+
+		<form id="myForm" action="action.php" method="GET">
+			<fieldset name="U_form">
+				<legend>A propos de l'utilisateur</legend>
+
+				<div name="U_Idendite">
+					<fieldset name="U_FSet_Identite">
+						<legend>Identité</legend>
+						<label>Nom :</label>
+							<input id="u_nom" type="text" name="U_Nom" placeholder="Nom">
+							<br>
+						<label>Prenom :</label>
+							<input id="u_prenom" type="text" name="U_Prenom" placeholder="Prenom">
+							<br>
+						<label>Date de Naissance :</label>
+							<input id="u_ddn" type="date" name="U_DDN" onchange="//change_U_age()">
+							<br>
+					</fieldset>
+				</div>
+
+				<div name="U_Infos_Complementaires">
+					<fieldset name="U_FSet_IComplementaires">
+						<legend>Informations Complémentaires</legend>
+						<label>Email :</label>
+							<input id="u_email" type="email" id="u_email" name="U_Email">
+							<br>
+						<label>Poids :</label>
+							<input id="u_poids" type="number" id="u_poids" name="U_Poids">
+							<br>
+						<label>Taille :</label>
+							<input id="u_taille" type="number" id="u_taille" name="U_Taille" onchance="change_IMC();">
+							<br>
+							<input type="radio" id="u_genre_h" name="U_Genre" value="Homme">
+							<label>Homme</label>
+							<br>
+							<input type="radio" id="u_genre_f" name="U_Genre" value="Femme">
+							<label>Femme</label>
+							<br>
+							<input type="radio" id="u_genre_a" name="U_Genre" value="Autre">
+							<label>Autre</label>
+							<br>
+					</fieldset>
+				</div>
+
+				<div name="U_Infos_Musique">
+					<fieldset name="U_FSet_IMusique">
+						<legend>Genre Musical :</legend>
+						<input type="checkbox" name="u_music_style_pop" value="Pop">
+						<label>Pop</label><br>
+						<input type="checkbox" name="u_music_style_pop" value="Electro">
+						<label>Electro</label><br>
+						<input type="checkbox" name="u_music_style_pop" value="Rap">
+						<label>Rap</label><br>
+					</fieldset>
+				</div>
+
+				<div name="buttons" id="buttons">
+					<input type="reset" name="form_reset" id="form_reset">
+					<input type="submit" name="form_submit" id="form_submit" onclick="submit_form()" value="Valider">
+				</div>
+			</fieldset>
+		</form>
+
+		<footer>
+			
+		</footer>
+	</center>
+</body>
+</html>
