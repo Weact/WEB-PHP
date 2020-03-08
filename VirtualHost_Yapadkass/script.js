@@ -5,5 +5,3 @@
 *   JS FILE FOR  INDEX.PHP  *
 *          YAPADKASS        *
 *                           */
-
-alert('Yo a tous');
