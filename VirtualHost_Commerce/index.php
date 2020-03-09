@@ -83,6 +83,8 @@
     </div>
 
     <?php
+    if(isset($conn))
+    {
       if(!empty($_GET['nom_client']))
       {
         $req = "SELECT * FROM client WHERE NOM='".$_GET['nom_client']."'";
@@ -159,19 +161,19 @@
         $stmt = $conn -> prepare($req);
         $stmt -> execute();
 
-                    echo "<div id='table-container-div' class='table-client-container'>";
-            echo "<br><table id='tableClient' class='tab'>";
-            echo "<thead>";
-              echo "<caption>INFORMATIONS DES CLIENTS</caption>";
-               echo "<tr>";
-                echo "<th>NUMERO COMMANDE</th>";
-                echo "<th>NUMERO CLIENT</th>";
-                echo "<th>DATE DE COMMANDE</th>";
-              echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-          foreach ($stmt as $comm) {
-           echo "<tr>";
+        echo "<div id='table-container-div' class='table-client-container'>";
+        echo "<br><table id='tableClient' class='tab'>";
+        echo "<thead>";
+        echo "<caption>INFORMATIONS DES CLIENTS</caption>";
+        echo "<tr>";
+        echo "<th>NUMERO COMMANDE</th>";
+        echo "<th>NUMERO CLIENT</th>";
+        echo "<th>DATE DE COMMANDE</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
+        foreach ($stmt as $comm) {
+            echo "<tr>";
             echo "<td>".$comm["NUM_COMMANDE"]."</td>";
             echo "<td>".$comm["NUM_CLIENT"]."</td>";
             echo "<td>".$comm["DDC"]."</td>";
@@ -213,6 +215,35 @@
         echo "</div>";
       }
 
+      if(empty($_GET['nom_client']) && empty($_GET['localite_client']) && empty($_GET['date_com']) && empty($_GET['produit']))
+      {
+        $req = "SELECT * FROM commande";
+        $stmt = $conn -> prepare($req);
+        $stmt -> execute();
+        echo "<div id='table-container-div' class='table-client-container'>";
+        echo "<br><table id='tableClient' class='tab'>";
+        echo "<thead>";
+        echo "<caption>INFORMATIONS DES CLIENTS</caption>";
+        echo "<tr>";
+        echo "<th>NUMERO COMMANDE</th>";
+        echo "<th>NUMERO CLIENT</th>";
+        echo "<th>DATE DE COMMANDE</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
+        foreach ($stmt as $comm) {
+            echo "<tr>";
+            echo "<td>".$comm["NUM_COMMANDE"]."</td>";
+            echo "<td>".$comm["NUM_CLIENT"]."</td>";
+            echo "<td>".$comm["DDC"]."</td>";
+            echo "</tr>";
+        }
+        echo "</tbody>";
+        echo "</table>";
+        echo "</div>";
+        echo "</div>";
+      }
+    }
     ?>
 
 </center>
