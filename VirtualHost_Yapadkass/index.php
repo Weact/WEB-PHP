@@ -2,14 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Yapadkass Blog</title>
+    <title>Commerce</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
 
   <body>
     <header> <!-- Website's Header => It will contains Title and main informations -->
-      <span>YAPADKASS</span>
+      <span>COMMERCE</span>
     </header>
 
     <nav> <!-- Website's navigation bar => It will contains link to log in, log out, [...] -->
