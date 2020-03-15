@@ -13,19 +13,23 @@ define('USERNAME','root');
 define('PASSWORD','');
 define('DATABASE','yapadkass');
 
-connect(SERVERNAME, USERNAME, PASSWORD, DATABASE);
-
-function connect($servername, $username, $password, $db)
+function db_connect()
 {
   try{
     //Create connection
-    $conn = new PDO("mysql:host=".$servername.";dbname=".$db, $username, $password);
+    $conn = new PDO("mysql:host=".SERVERNAME.";dbname=".DATABASE, USERNAME, PASSWORD);
     //set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     //echo "<span style='color: green; font-weight: bolder; font-size: 32px;'>Connected successfully</span><br>";
     echo "<script> console.log('Connected successfully'); </script>";
-    $can_insert = 0;
+    if(!isset($can_inset))
+    {
+      $can_insert = 0;
+    }else{
+      
+    }
+    
 
     select_client($conn);
 
@@ -37,10 +41,6 @@ function connect($servername, $username, $password, $db)
     }
 
     select_client_profil($conn);
-
-
-
-    //insert($conn, "client_profil", "Weact", "Weact67");
   }
   catch(PDOException $e)
   {

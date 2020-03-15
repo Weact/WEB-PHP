@@ -91,29 +91,29 @@
         $stmt = $conn -> prepare($req);
         $stmt -> execute();
 
-                    echo "<div id='table-container-div' class='table-client-container'>";
-            echo "<br><table id='tableClient' class='tab'>";
-            echo "<thead>";
-              echo "<caption>INFORMATIONS DES CLIENTS</caption>";
-               echo "<tr>";
-                echo "<th>NUM_CLIENT</th>";
-                echo "<th>NOM</th>";
-                echo "<th>LOCALITE</th>";
-                echo "<th>VILLE</th>";
-                echo "<th>CATEGORIE_CLIENT</th>";
-                echo "<th>SOLDE_CLIENT</th>";
-              echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-          foreach ($stmt as $client) {
-           echo "<tr>";
-            echo "<td>".$client["NUM_CLIENT"]."</td>";
-            echo "<td>".$client["NOM"]."</td>";
-            echo "<td>".$client["LOCALITE"]."</td>";
-            echo "<td>".$client["VILLE"]."</td>";
-            echo "<td>".$client["CATEGORIE_CLIENT"]."</td>";
-            echo "<td>".$client["SOLDE_CLIENT"]."</td>";
-            echo "</tr>";
+        echo "<div id='table-container-div' class='table-client-container'>";
+        echo "<br><table id='tableClient' class='tab'>";
+        echo "<thead>";
+        echo "<caption>INFORMATIONS DES CLIENTS</caption>";
+        echo "<tr>";
+        echo "<th>NUM_CLIENT</th>";
+        echo "<th>NOM</th>";
+        echo "<th>LOCALITE</th>";
+        echo "<th>VILLE</th>";
+        echo "<th>CATEGORIE_CLIENT</th>";
+        echo "<th>SOLDE_CLIENT</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
+        foreach ($stmt as $client) {
+          echo "<tr>";
+          echo "<td>".$client["NUM_CLIENT"]."</td>";
+          echo "<td>".$client["NOM"]."</td>";
+          echo "<td>".$client["LOCALITE"]."</td>";
+          echo "<td>".$client["VILLE"]."</td>";
+          echo "<td>".$client["CATEGORIE_CLIENT"]."</td>";
+          echo "<td>".$client["SOLDE_CLIENT"]."</td>";
+          echo "</tr>";
         }
         echo "</tbody>";
         echo "</table>";
@@ -126,29 +126,29 @@
         $stmt = $conn -> prepare($req);
         $stmt -> execute();
 
-                    echo "<div id='table-container-div' class='table-client-container'>";
-            echo "<br><table id='tableClient' class='tab'>";
-            echo "<thead>";
-              echo "<caption>INFORMATIONS DES CLIENTS</caption>";
-               echo "<tr>";
-                echo "<th>NUM_CLIENT</th>";
-                echo "<th>NOM</th>";
-                echo "<th>LOCALITE</th>";
-                echo "<th>VILLE</th>";
-                echo "<th>CATEGORIE_CLIENT</th>";
-                echo "<th>SOLDE_CLIENT</th>";
-              echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-          foreach ($stmt as $client) {
-           echo "<tr>";
-            echo "<td>".$client["NUM_CLIENT"]."</td>";
-            echo "<td>".$client["NOM"]."</td>";
-            echo "<td>".$client["LOCALITE"]."</td>";
-            echo "<td>".$client["VILLE"]."</td>";
-            echo "<td>".$client["CATEGORIE_CLIENT"]."</td>";
-            echo "<td>".$client["SOLDE_CLIENT"]."</td>";
-            echo "</tr>";
+        echo "<div id='table-container-div' class='table-client-container'>";
+        echo "<br><table id='tableClient' class='tab'>";
+        echo "<thead>";
+        echo "<caption>INFORMATIONS DES CLIENTS</caption>";
+        echo "<tr>";
+        echo "<th>NUM_CLIENT</th>";
+        echo "<th>NOM</th>";
+        echo "<th>LOCALITE</th>";
+        echo "<th>VILLE</th>";
+        echo "<th>CATEGORIE_CLIENT</th>";
+        echo "<th>SOLDE_CLIENT</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
+        foreach ($stmt as $client) {
+          echo "<tr>";
+          echo "<td>".$client["NUM_CLIENT"]."</td>";
+          echo "<td>".$client["NOM"]."</td>";
+          echo "<td>".$client["LOCALITE"]."</td>";
+          echo "<td>".$client["VILLE"]."</td>";
+          echo "<td>".$client["CATEGORIE_CLIENT"]."</td>";
+          echo "<td>".$client["SOLDE_CLIENT"]."</td>";
+          echo "</tr>";
         }
         echo "</tbody>";
         echo "</table>";
@@ -173,11 +173,11 @@
         echo "</thead>";
         echo "<tbody>";
         foreach ($stmt as $comm) {
-            echo "<tr>";
-            echo "<td>".$comm["NUM_COMMANDE"]."</td>";
-            echo "<td>".$comm["NUM_CLIENT"]."</td>";
-            echo "<td>".$comm["DDC"]."</td>";
-            echo "</tr>";
+          echo "<tr>";
+          echo "<td>".$comm["NUM_COMMANDE"]."</td>";
+          echo "<td>".$comm["NUM_CLIENT"]."</td>";
+          echo "<td>".$comm["DDC"]."</td>";
+          echo "</tr>";
         }
         echo "</tbody>";
         echo "</table>";
