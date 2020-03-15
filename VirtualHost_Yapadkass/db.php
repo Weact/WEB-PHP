@@ -13,34 +13,18 @@ define('USERNAME','root');
 define('PASSWORD','');
 define('DATABASE','yapadkass');
 
+db_connect();
+
 function db_connect()
 {
   try{
-    //Create connection
     $conn = new PDO("mysql:host=".SERVERNAME.";dbname=".DATABASE, USERNAME, PASSWORD);
-    //set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //echo "<span style='color: green; font-weight: bolder; font-size: 32px;'>Connected successfully</span><br>";
     echo "<script> console.log('Connected successfully'); </script>";
-    if(!isset($can_inset))
-    {
-      $can_insert = 0;
-    }else{
-      
-    }
-    
 
-    select_client($conn);
-
-    if($can_insert == 1)
-    {
-      $req = "INSERT INTO `client_profil`(`username`, `password`) VALUES ('NZ','E*-9dd4qxx')";
-      $stmt = $conn->prepare($req);
-      $stmt->execute();
-    }
-
-    select_client_profil($conn);
+    //select_client($conn);
+    //insert_client_profil($conn, 'ZELP', 'forfivesieneight');
   }
   catch(PDOException $e)
   {
@@ -113,6 +97,13 @@ function select_client_profil($conn)
   echo "</table>";
   echo "</div>";
   echo "</div>";
+}
+
+function insert_client_profil($conn, $username, $password)
+{
+  $req = "INSERT INTO client_profil(username, password) VALUES ('".$username."','".$password."') ON DUPLICATE KEY UPDATE username = VALUES(username)";
+  $stmt = $conn->prepare($req);
+  $stmt->execute();
 }
 
 function insert($conn, $table, $username, $password)

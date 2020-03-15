@@ -6,9 +6,15 @@
 *          YAPADKASS        *
 *                           */
 
+@font-face {
+  font-family: "Archival";
+  src: url("SF_Arch_Rival-webfont.woff") format("woff");
+}
+
 body{
   background-color: #0c2461;
   margin: 0;
+  font-family: "Archival", Arial, sans-serif;
 }
 
 header{
@@ -18,10 +24,33 @@ header{
   height: 150px;
   padding: 10px;
 
-  font-size: 48px;
+  font-size: 60px;
   color: white;
 
   text-align: center;
+}
+header .welcome-msg{
+  font-size: 40px;
+  color: blue;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+footer{
+  position: absolute;
+  top: 95%;
+  color: white;
+  margin-left: 50px;
+}
+footer a{
+  text-decoration: none;
+}
+footer a:link{
+  color: inherit;
+  text-decoration: none;
+}
+footer a:visited
+{
+  color: inherit;
 }
 
 nav{
