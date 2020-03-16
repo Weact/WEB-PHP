@@ -22,19 +22,20 @@ header{
 }
 footer{
   position: absolute;
-  top: 95%;
+  top: 93%;
   color: white;
 }
 footer a{
-  text-decoration: none;
+  text-decoration: underline;
 }
 footer a:link{
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }
 footer a:visited
 {
   color: inherit;
+  text-decoration: underline;
 }
 .login-container{
   width: 280px;
@@ -44,7 +45,7 @@ footer a:visited
   transform: translate(-50%,-50%);
   color: #BDBDBD;
   background-color: #EEEEEE11;
-  padding: 125px 300px 200px 300px;
+  padding: 50px 300px 50px 300px;
   border: 2px solid black;
   border-radius: 20px;
 }

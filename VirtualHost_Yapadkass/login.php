@@ -3,10 +3,11 @@
 *      LUDUS  ACADEMIE      *
 *    OWNER : DRUCKES Lucas  *
 *      WEACT     2020       *
-*        PHP LOGIN FILE     *
+*   PHP FILE FOR  INDEX.PHP *
 *          YAPADKASS        *
 *                           */
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -26,35 +27,17 @@
         </header>
         <div class="login-container">
           <form class="login_form" action="index.php" method="GET">
-            <h1>Sign Up</h1>
-            <div class="textbox">
-              <img class="i-icon i-uname" src="name.svg" alt="Name" title="Name">
-              <input type="text" class="txtuser" placeholder="Last Name" name="client-name" value="">
-            </div>
+            <h1>Log In</h1>
             <div class="textbox">
               <img class="i-icon i-uname" src="user-tie-solid.svg" alt="user-tie" title="Username">
               <input type="text" class="txtuser" placeholder="Username" name="client-username" value="">
             </div>
             <div class="textbox">
-              <img class="i-icon i-psw" src="mail.svg" alt="mail" title="Email">
-              <input type="email" class="txtuser" placeholder="Email" name="client-email" value="">
-            </div>
-
-            <div class="textbox">
               <img class="i-icon i-psw" src="key-solid.svg" alt="key" title="Password">
               <input type="password" class="txtuser" placeholder="Password" name="client-password" value="">
             </div>
-            <div class="textbox">
-              <img class="i-icon i-psw" src="lock.svg" alt="lock" title="Confirm">
-              <input type="password" class="txtuser" placeholder="Confirm Password" name="client-confirm" value="">
-            </div>
-            <div class="textbox">
-              <img class="i-icon i-psw" src="location.svg" alt="location" title="Location">
-              <input type="text" class="txtuser" placeholder="Adress" name="client-adresse" value="">
-            </div>
-
             <input type="checkbox" class="checkbox" name="admin-switch" value="admin" title="Admin?">
-            <input class="btn" type="submit" name="signup-btn" value="Sign Up">
+            <input class="btn" type="submit" name="login-btn" value="Log Up">
           </form>
         </div>
 

@@ -10,28 +10,32 @@
   <body>
   <?php
       require('db.php');
+      require('request.php');
       $conn = db_connect();
 
-      if(isset($_POST['signup-btn']))
+      if(isset($_GET['signup-btn']))
       {
-        if($_POST['has_submited'] == 0)
-        {
-          $u_name = $_POST['client-username'];
-          $u_email = $_POST['client-email'];
-          $u_pwd = $_POST['client-password'];
-          $u_pwdconf = $_POST['client-confirm'];
+          $u_name = $_GET['client-name'];
+          $u_username = $_GET['client-username'];
+          $u_email = $_GET['client-email'];
+          $u_pwd = $_GET['client-password'];
+          $u_pwdconf = $_GET['client-confirm'];
+          $u_adresse = $_GET['client-adresse'];
+          $u_adm = (isset($_GET['admin-switch'])) ? $u_adm = "TRUE" : $u_adm = "FALSE" ;
 
-          if(empty($u_name) || empty($u_email) || empty($u_pwd) || empty($u_pwdconf))
+          $u_date = date("Y-m-d");
+          echo $u_date;
+          echo gettype($u_date);
+
+          if(empty($u_name) || empty($u_email) || empty($u_pwd) || empty($u_pwdconf) || empty($u_adresse))
           {
             header("location:signup.php?");
           }
           else if($u_pwd != $u_pwdconf){
             header("location:signup.php?");
           }else{
-          $_POST['has_submited'] = 1;
-          insert_client_profil($conn, $u_name, $u_pwd);
+            insert_client($conn, $u_name, $u_adresse, $u_username, $u_pwd, $u_date, $u_email, $u_adm);
           }
-        }
       }
 ?>
 
@@ -49,7 +53,7 @@
     <nav> <!-- Website's navigation bar => It will contains link to log in, log out, [...] -->
       <div class="log">
         <a href="signup.php">Sign Up</a>
-        <a href="#">Log In</a>
+        <a href="login.php">Log In</a>
         <?php
           if(isset($u_name)){
             echo "<a href='index.php?'>Log Out</a>";
@@ -59,7 +63,7 @@
     </nav>
 
     <div class="client-container">
-      <?php select_client_profil($conn); ?>
+      <?php select_client($conn); ?>
     </div>
 
     <footer> <!-- Website's footer => It will contains all the informations about the website's owner and contact, policy etc.. -->
