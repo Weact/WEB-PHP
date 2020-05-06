@@ -13,6 +13,13 @@
       require('request.php');
       $conn = db_connect();
 
+      // $type_form;
+      //
+      // if(isset($_GET['typeform']))
+      // {
+      //         $type_form = $_GET['typeform']
+      // }
+
       if(isset($_GET['signup-btn']))
       {
           $u_name = $_GET['client-name'];
@@ -35,7 +42,19 @@
             header("location:signup.php?");
           }else{
             insert_client($conn, $u_name, $u_adresse, $u_username, $u_pwd, $u_date, $u_email, $u_adm);
+            echo "SIGNUP";
           }
+      }
+      if(isset($_GET['login-btn']))
+      {
+        if(isset($_GET['client-username']) && isset($_GET['client-password']))
+        {
+          $u_username = $_GET['client-username'];
+          $u_pwd = $_GET['client-password'];
+
+          check_user_information_at_login($conn, $u_username, $u_pwd);
+        }
+
       }
 ?>
 
@@ -46,6 +65,12 @@
       if(isset($u_name))
       {
         echo "<span class='welcome-msg'>WELCOME " .$u_name. " !</span>";
+        if($u_adm == "TRUE")
+        {
+          echo "<span class='adm-marker'>CONNECTED AS ADMIN</span>";
+        }else{
+          echo "<span class='adm-marker'>CONNECTED AS CLIENT</span>";
+        }
       }
       ?>
     </header>

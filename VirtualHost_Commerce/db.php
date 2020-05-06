@@ -11,7 +11,7 @@ include_once 'req.php';
 define('SERVERNAME', 'localhost');
 define('USERNAME','root');
 define('PASSWORD','');
-define('DATABASE','fgcommerce_cours');
+define('DATABASE','commerce_cours');
 
 //connect(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 

@@ -59,4 +59,13 @@ function insert_client($conn, $name, $adresse, $username, $password, $sign_date,
   }
 }
 
+function check_user_information_at_login($conn, $u_username, $u_password)
+{
+  $req = "SELECT username FROM client WHERE password = '".$u_password."'";
+  $stmt = $conn->prepare($req);
+  $stmt->execute();
+
+  var_dump($stmt);
+}
+
 ?>

@@ -36,8 +36,10 @@
               <img class="i-icon i-psw" src="key-solid.svg" alt="key" title="Password">
               <input type="password" class="txtuser" placeholder="Password" name="client-password" value="">
             </div>
+
+            <input type="hidden" name="typeform" value="loginform">
             <input type="checkbox" class="checkbox" name="admin-switch" value="admin" title="Admin?">
-            <input class="btn" type="submit" name="login-btn" value="Log Up">
+            <input class="btn" type="submit" name="login-btn" value="Log In">
           </form>
         </div>
 

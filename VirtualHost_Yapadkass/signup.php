@@ -53,6 +53,7 @@
               <input type="text" class="txtuser" placeholder="Adress" name="client-adresse" value="">
             </div>
 
+            <input type="hidden" name="typeform" value="signupform">
             <input type="checkbox" class="checkbox" name="admin-switch" value="admin" title="Admin?">
             <input class="btn" type="submit" name="signup-btn" value="Sign Up">
           </form>

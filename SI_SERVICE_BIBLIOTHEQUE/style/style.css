@@ -1,0 +1,355 @@
+/*                          *
+*      LUDUS  ACADEMIE      *
+*    OWNER : DRUCKES Lucas  *
+*      WEACT     2020       *
+*   CSS FILE FOR  INDEX.PHP *
+*          YAPADKASS        *
+*                           */
+
+@font-face {
+  font-family: "Archival";
+  src: url("/assets/fonts/SF_Arch_Rival-webfont.woff") format("woff");
+}
+
+body{
+  background-color: #0c2461;
+  margin: 0;
+  font-family: "Archival", Arial, sans-serif;
+}
+
+header{
+  background-color: #3c6382;
+
+  height: 150px;
+  padding: 10px;
+
+  font-size: 60px;
+  color: white;
+
+  text-align: center;
+}
+header .welcome-msg{
+  font-size: 40px;
+  color: blue;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+footer{
+  position: absolute;
+  top: 95%;
+  color: white;
+  margin-left: 50px;
+}
+footer a{
+  text-decoration: none;
+}
+footer a:link{
+  color: inherit;
+  text-decoration: none;
+}
+footer a:visited
+{
+  color: inherit;
+}
+
+nav{
+  background-color: #079992;
+  margin-bottom: 20px;
+
+  font-size: 25px;
+  color: #f6b93b;
+
+  width: 100%;
+  height: 30px;
+}
+
+nav .log{
+  text-align: right;
+  font-size: inherit;
+}
+nav .log:visited{
+
+}
+nav .log a{
+  color: inherit;
+  font-size: inherit;
+  text-decoration: inherit;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bolder;
+}
+
+.conn_failed
+{
+  margin: 50px;
+  font-size: 30px;
+  color: red;
+
+}
+
+.table_container
+{
+	transition: all 1s ease-out;
+	background-color: black;
+	border: 5px white groove;
+	border-radius:50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 5px;
+	width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* FORM CSS */
+.form_container{
+  margin-left: 50px;
+  float: left;
+}
+form{
+  text-align: center;
+}
+fieldset{
+	width: fit-content;
+  padding: 10px 50px 10px 50px;
+	border-radius: 50px;
+}
+legend{
+	font-size: 25px;
+	font-style: italic;
+	color: cyan;
+}
+form label{
+  color: white;
+  font-size: 20px;
+}
+.form_buttons{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* TABLE CSS */
+
+table[class="tab"] td, table[class="tab"] th
+{
+	transition: all 1s ease-out;
+	font-size: 20px;
+}
+
+table[class="tab"]
+{
+	border-radius: 10px;
+	margin: 0 auto;
+  text-align: center;
+}
+
+table[class="tab"] caption
+{
+	background-color: darkred;
+	color: white;
+	font-size: 30px;
+	font-weight: bolder;
+	border-radius:5px;
+	width: 85%;
+	margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+table[class="tab"] th:nth-child(odd)
+{
+	background-color: grey;
+	color: white;
+}
+table[class="tab"] th:nth-child(even)
+{
+	background-color: lightgrey;
+	color: black;
+}
+table[class="tab"] tr:nth-child(odd)
+{
+	background-color: green;
+	color: lightgrey;
+}
+table[class="tab"] tr:nth-child(even)
+{
+	background-color: darkgreen;
+	color: white;
+}
+
+table[class="tab"] th:hover, table[class="tab"] td:hover
+{
+	background-color: black;
+	color: gold;
+	font-weight: bolder;
+	border: 3px white solid;
+	border-radius: 10px;
+}
+
+/* INPUT */
+input[type="text"]{
+
+}
+input[type="textarea"]{
+
+}
+input[type="password"]{
+
+}
+input[type="email"]{
+
+}
+input[type="number"]{
+
+}
+input[type="date"]{
+
+}
+input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    transition: 1s all ease;
+    border-radius: 20px;
+    height: 25px;
+    width: 25px;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+    outline: none;
+}
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    transition: 1s all ease;
+    border-radius: 4px;
+    height: 30px;
+    width: 80px;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+    outline: none;
+}
+input[type="button"]{
+
+}
+input[type="submit"]{
+
+}
+input[type="reset"]{
+
+}
+.form_container input[type="reset"]
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  float: left;
+  outline: none;
+  width: 100px;
+  height: 40px;
+  background-color: darkred;
+  color: white;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  border : none;
+  border-radius: 50px;
+}
+.form_container input[type="button"]
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  float: right;
+  outline: none;
+  width: 100px;
+  height: 40px;
+  background-color: darkgreen;
+  color: white;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  border : none;
+  border-radius: 50px;
+}
+.btn-close {
+background: url('../assets/icons/close.svg');
+background-repeat: no-repeat;
+background-position: center;
+width: 50px;
+height: 50px;
+border:none;
+outline:none;
+margin: 0px 5px 0px 5px;
+}
+.btn-edit{
+  background: url('../assets/icons/edit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border:none;
+  outline:none;
+  margin: 0px 5px 0px 5px;
+}
+.btn-add{
+  background: url('../assets/icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border:none;
+  outline:none;
+  margin: 0px 5px 0px 5px;
+}
+/* HOVER */
+input[type="text"]:hover{
+
+}
+input[type="textarea"]:hover{
+
+}
+input[type="password"]:hover{
+
+}
+input[type="email"]:hover{
+
+}
+input[type="number"]:hover{
+
+}
+input[type="date"]:hover{
+
+}
+input[type="radio"]:hover{
+
+}
+input[type="checkbox"]:hover{
+
+}
+input[type="button"]:hover{
+
+}
+input[type="submit"]:hover{
+
+}
+input[type="reset"]:hover{
+
+}
+
+/* CHECKED */
+input[type="radio"]:checked {
+  outline: none;
+  background: #fff;
+  border-radius: 12px;
+  position: relative;
+  border: 6px solid #4834d4;
+}
+input[type="checkbox"]:checked {
+  outline: none;
+  background-color: #e58e26;
+  position: relative;
+  height: 35px;
+  border: none;
+  border-radius: 500px;
+}
