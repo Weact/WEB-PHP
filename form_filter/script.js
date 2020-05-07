@@ -3,51 +3,31 @@ const min_age = 0;
 const max_age = 99;
 const u_pass = "ludus";
 const const_array = [min_age, max_age, u_pass];
+const currentSelectionDisplayer = document.getElementById('current_selection_displayer');
+const currentSportDisplayer = document.getElementById('current_sports_displayer');
 
-
-// function init()
-// {
-//   let url = location; //récupère l'URL de la page
-//   let params = new URLSearchParams(url.search.slice(1)); //récupère le contenu de l'url après le '?' (inclus) et le sépare
-//
-//   if(params.get('username') != null) //Si "username" n'est pas nul (chez moi c'est mon 1er élément)
-//   {
-//     var u_birthday = document.getElementById('user_birthdate').value;
-//     var age = get_age(u_birthday);
-//     document.getElementById('display_user_info').style.display = "block"; //Le div là où j'vais afficher les infos, j'le mets en display block, donc je l'affiche
-//     document.getElementById('p_username').innerHTML = "Nom de compte: " + params.get('username');
-//     document.getElementById('p_password').innerHTML = "Votre mot de passe: " + params.get('password');
-//     document.getElementById('p_name').innerHTML = "Votre prénom: " + params.get('user_name');
-//     document.getElementById('p_fname').innerHTML = "Votre nom: " + params.get('user_firstname');
-//     document.getElementById('p_email').innerHTML = "Votre EMail: " + params.get('user_email');
-//     document.getElementById('p_age').innerHTML = "Votre date de naissance(AAAA/MM/JJ) : " + params.get('user_birthdate');
-//     document.getElementById('p_gender').innerHTML = "Genre: " + params.get('user_gender');
-//     document.getElementById('p_music').innerHTML = "Genre musical sélectionné: " + params.get('song-gend-select');
-//
-//     /*les alert là c'était pour debug le bordel
-//     alert("username " + params.get('username'));
-//     alert("password " + params.get('password'));
-//     alert("user_name " + params.get('user_name'));
-//     alert("user_firstname " + params.get('user_firstname'));
-//     alert("user_birthdate " + params.get('user_birthdate'));
-//     alert("user_gender " + params.get('user_gender'));
-//     alert("size " + params.get('size'));
-//     alert("weight " + params.get('weight'));
-//     alert("user_email " + params.get('user_email'));
-//     alert("song-gend-selct " + params.get('song-gend-selct'));*/
-//
-//   }else{
-//     //Ce code va s'executer si "username" est vide, donc en soit, on a pas encore remplie le formulaire
-//     document.getElementById('display_user_info').style.display = "none"; //je cache le div là où les infos vont s'afficher
-//     //alert("Veuillez remplir le formulaire"); //je demande à l'utilisateur de remplir le formulaire
-//   }
-// }
-
-function inform_user_select_menu()
+function inform_user_songGender()
 {
   var i_selected = document.getElementById('song_gender_selection');
-  var index = i_selected.options[i_selected.selectedIndex].value;
-  alert('Vous avez sélectionné: ' + index);
+  var selected_display = "Vous avez séléctionné: ";
+  for(i = 0; i < i_selected.options.length; i++){
+    if(i_selected.options[i].selected){
+      selected_display = selected_display.concat(i_selected.options[i].value + " ");
+    }
+  }
+  currentSelectionDisplayer.innerHTML = selected_display;
+}
+
+function inform_user_sportSelected(name)
+{
+  var i_selected = document.getElementsByName(name);
+  var selected_display = "Vous avez au moins une fois pratiqué: ";
+  for(i = 0; i < i_selected.length; i++){
+    if(i_selected[i].checked){
+      selected_display = selected_display.concat(" " + i_selected[i].value);
+    }
+  }
+  currentSportDisplayer.innerHTML = selected_display;
 }
 
 function validate_form(src)
@@ -63,11 +43,13 @@ function validate_form(src)
   var u_name = document.getElementById('user_name').value;
   var u_fname = document.getElementById('user_firstname').value;
   var u_birthday = document.getElementById('user_birthdate').value;
-  var u_gender = document.getElementById('user_gender').options[document.getElementById('user_gender').selectedIndex].value;
+  // var u_gender = document.getElementById('user_gender').options[document.getElementById('user_gender').selectedIndex].value;
+  var u_gender = get_radio_value_by_name('user_gender');
   var u_email = document.getElementById('user_email').value;
-  var u_song_type = document.getElementById('song_gender_selection').options[document.getElementById('song_gender_selection').selectedIndex].value;
+  var u_url = document.getElementById('user_url').value;
+  var u_song_type = document.getElementById('song_gender_selection').options.value;
   var form_submit_ok = document.getElementById('hiddenInput').value;
-  if(form_submit_ok == 1 && u_password == u_pass && check_input(u_name) && check_input(u_fname) && ((parseInt(get_age(u_birthday),10) > 3) && (parseInt(get_age(u_birthday),10) < 100)) && check_mail(u_email))
+  if(form_submit_ok == 1 && u_password == u_pass && check_input(u_name) && check_url(u_url) && check_input(u_fname) && ((parseInt(get_age(u_birthday),10) > 3) && (parseInt(get_age(u_birthday),10) < 100)) && check_mail(u_email) && u_gender != null)
   {
     document.getElementById('user_age').value = get_age(u_birthday);
     can_submit = true;
@@ -119,9 +101,30 @@ function validate_form(src)
       document.getElementById('user_email').style.color = "green";
       form_submit_ok = 1;
     }
+    if(!check_url(u_url)){
+      document.getElementById('user_url').style.color = "red";
+      document.getElementById('user_url').focus();
+      document.getElementById('user_url').scrollIntoView();
+    }else{
+      document.getElementById('user_url').style.color = green;
+      form_submit_ok = 1;
+    }
+    if(u_gender == null){
+      document.get
+    }
   }
     if(can_submit && form_submit_ok == 1)
       var form = document.getElementById("myForm").submit();
+}
+
+function get_radio_value_by_name(name){
+  var radios = document.getElementsByName(name);
+  for(i = 0; i < radios.length; i++){
+    if(radios[i].checked){
+      return radios[i].value;
+    }
+  }
+  return null;
 }
 
 function check_input(input)
@@ -139,6 +142,18 @@ function check_input(input)
 function check_mail(input)
 {
   var regex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+  if(input.match(regex))
+  {
+    return true;
+  }else{
+    console.log(input + "is not a valid input!");
+    return false;
+  }
+}
+
+function check_url(input)
+{
+  var regex = /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm
   if(input.match(regex))
   {
     return true;

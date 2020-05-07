@@ -23,6 +23,12 @@ input[type="checkbox"]:hover{
   transition: all 0.25s ease-in;
   height: 50px;
 }
+.selection_displayer{
+  color: black;
+  background-color: rgba(0,255,0,.6);
+  border: 1px rgba(0,0,0,1) solid;
+  padding: 5px;
+}
 .header{
   color: white;
   background: linear-gradient(#2f3542,#57606f);
@@ -39,7 +45,7 @@ input[type="checkbox"]:hover{
   border-radius: 10px;
   padding: 20px;
 }
-.answer_question strong{
+.warning_extract{
   color: black;
   background-color: rgba(255,0,0,.6);
   border: 1px rgba(0,0,0,1) solid;
